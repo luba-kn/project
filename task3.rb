@@ -15,13 +15,13 @@ if ARGV.length < 2
 	puts "Много данных"
 	exit
 end
-if !(/\d+/.match ARGV[0]) || !(/\d+/.match ARGV[1])
+if !(/\d+\.?\d*/.match ARGV[0]) || !(/\d+\.?\d*/.match ARGV[1])
 	puts "ошибка"
 	exit
 end
 
-t1 = ARGV[0].to_i
-t2 = ARGV[1].to_i
+t1 = ARGV[0].to_f
+t2 = ARGV[1].to_f
 		
 
 if ( (1..100000).include?(t1) && (1..100000).include?(t2) )
@@ -31,6 +31,7 @@ if ( (1..100000).include?(t1) && (1..100000).include?(t2) )
 	resTemp = resT % 3600
 	resMin = resTemp.div 60
 	resSec = (resT % 3600) % 60
+	resSec = resSec.round
 	
 	if !(resHour==0)
 		str += resHour.to_s
