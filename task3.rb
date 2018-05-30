@@ -24,7 +24,7 @@ t1 = ARGV[0].to_i
 t2 = ARGV[1].to_i
 		
 
-if ( (1 <= t1) && (t2 <= 100000) && (t2>=1) && (t1 <= 100000) )
+if ( (1..100000).include?(t1) && (1..100000).include?(t2) )
 	str = ""
 	resT = t1+t2
 	resHour = resT.div 3600
