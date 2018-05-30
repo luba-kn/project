@@ -8,7 +8,7 @@
 #> 2 секунды
 #> ruby task.rb 3600 3599
 #> 1 час 59 минут 59 секунд
-if ARGV.length < 2
+if ( ARGV.length < 2 || ARGV.empty? )
 	puts "Мало данных"
 		exit
 	elsif ARGV.length >= 3
