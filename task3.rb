@@ -36,9 +36,9 @@ if ( (1..100000).include?(t1) && (1..100000).include?(t2) )
 	if !(resHour==0)
 		str += resHour.to_s
 	
-		if ( (resHour%10)==1 )
+		if ( (resHour%10)==1 && ( resHour!=11 ) )
 			str += " час "
-		elsif ( (resHour%10)>=2 && (resHour%10)<=4 )
+		elsif ( (resHour%10)>=2 && (resHour%10)<=4 && !((12..14).include?(resHour)) )
 			str += " часа "
 		else str += " часов " 
 		end
@@ -47,9 +47,9 @@ if ( (1..100000).include?(t1) && (1..100000).include?(t2) )
 	if !(resMin==0)
 	str += resMin.to_s
 	
-		if ( (resMin%10)==1 )
+		if ( (resMin%10)==1 && ( resMin!=11 ) )
 			str += " минута "
-		elsif ( (resMin%10)>=2 && (resMin%10)<=4 )
+		elsif ( (resMin%10)>=2 && (resMin%10)<=4 && !((12..14).include?(resMin)) )
 			str += " минуты "
 		else str += " минут " 
 		end
@@ -58,9 +58,9 @@ if ( (1..100000).include?(t1) && (1..100000).include?(t2) )
 	if !(resSec==0)
 		str += resSec.to_s
 	
-		if ( (resSec%10)==1 )
+		if ( (resSec%10)==1 && ( resSec!=11 ) )
 			str += " секунда "
-		elsif ( (resSec%10)>=2 && (resSec%10)<=4 )
+		elsif ( (resSec%10)>=2 && (resSec%10)<=4 && !((12..14).include?(resSec)))
 			str += " секунды "
 		else str += " секунд " 
 		end
