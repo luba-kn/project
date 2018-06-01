@@ -36,9 +36,9 @@ if ( (1..100000).include?(t1) && (1..100000).include?(t2) )
 	if !(resHour==0)
 		str += resHour.to_s
 	
-		if ( (resHour%10)==1 && ( resHour!=11 ) )
+		if ( (resHour%10)==1 && ( resHour!=11 ) && ( (resHour%100)!=11 ) )
 			str += " час "
-		elsif ( (resHour%10)>=2 && (resHour%10)<=4 && !((12..14).include?(resHour)) )
+		elsif ( (resHour%10)>=2 && (resHour%10)<=4 && !((12..14).include?(resHour)) && !((12..14).include?(resHour%100)))
 			str += " часа "
 		else str += " часов " 
 		end
@@ -70,5 +70,6 @@ if ( (1..100000).include?(t1) && (1..100000).include?(t2) )
 	
 else
 	puts "неправильные числа"
+	exit
 end	
 		
