@@ -9,22 +9,29 @@
 # encoding: utf-8
 
 if (ARGV.empty? )
-	puts "Мало данных"
+	#puts "Мало данных"
 		exit
 	elsif ARGV.length >= 2
-	puts "Много данных"
+	#puts "Много данных"
 	exit
 end
 
 str = ARGV[0]
 n = str.length
 if (n<1 || n>10000)
-	puts "не та длина строки"
+	#puts "не та длина строки"
 	exit
 end
 
 str = str.encode('utf-8')
+#if ((/\d*[a-zA-z]*/.match ARGV[0]))
+#	puts "ошибка"
+#	exit
+#end
+
 
 #puts str.encode('utf-8')
 str = str.gsub /[\u041A\u043A\u041D\u043D\u0420\u0440]/, ""
 puts str
+
+# закомментированы сообщения об ошибках
