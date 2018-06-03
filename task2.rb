@@ -25,10 +25,10 @@ def sravnit(a,b)
 end
 
 if ( ARGV.length < 2 || ARGV.empty? )
-	puts "Мало данных"
+	#puts "Мало данных"
 	exit
 elsif ARGV.length >= 3
-	puts "Много данных"
+	#puts "Много данных"
 	exit
 end
 
@@ -36,6 +36,8 @@ count = 0
 str1 = ARGV[0]
 str2 = ARGV[1]
 str3 = []
+
+#puts str1.class
 
 n1 = str1.length
 n2 = str2.length
@@ -130,3 +132,4 @@ else
 	res = res1
 	puts res
 end
+#закоментированы сообщения об ошибках
